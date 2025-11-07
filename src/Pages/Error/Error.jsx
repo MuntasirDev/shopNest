@@ -1,13 +1,13 @@
 import React from 'react';
 import { ShoppingCart, Home } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import Logo from '../../assets/shopnest-logo.png'; // If you have a logo
+import Logo from '../../assets/shopnest-logo.png'; 
 
 const Error = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-bl from-green-50 via-white to-green-100 px-4 text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-linear-to-bl from-green-50 via-white to-green-100 px-4 text-center">
       {/* Optional Logo */}
       <img src={Logo} alt="ShopNest Logo" className="w-16 h-16 object-contain mb-4 drop-shadow-lg rounded-full" />
       {/* Animated cart */}

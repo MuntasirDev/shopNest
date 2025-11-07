@@ -198,7 +198,7 @@ const Auth = () => {
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/60 to-white" />
+        <div className="absolute inset-0 z-0 bg-linear-to-b from-white/60 to-white" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left hero content */}
