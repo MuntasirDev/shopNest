@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router";
 import Root from '../Pages/Root/Root';
 import Error from '../Pages/Error/Error';
 import Auth from '../Pages/Auth/Auth';
+import About from '../Pages/About';
 
 
 
@@ -20,4 +21,8 @@ export const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path: "/about",
+    Component: About,
+  }
 ]);

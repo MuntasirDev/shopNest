@@ -2,6 +2,7 @@ import React from 'react';
 import { Facebook, Instagram, Twitter, Phone, Mail, MapPin, Panda} from "lucide-react";
 import Logo from '../../assets/shopnest-logo.png';
 
+
 const Footer = () => (
   <footer className="bg-green-900 border-t border-green-200 py-10 mt-12">
     <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">

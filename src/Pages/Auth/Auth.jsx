@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { User, ShieldCheck, Truck, Leaf, Shield, Clock } from "lucide-react";
 import heroGrocery from "../../assets/hero-grocery.jpg"; // Adjust path if needed
+import { useNavigate } from "react-router";
+
 
 // Features data
 const features = [
@@ -29,6 +31,7 @@ const features = [
 // Features Section
 const Features = () => {
   const [activeIdx, setActiveIdx] = useState(null);
+  const navigate = useNavigate();
   return (
     <section className="py-16 bg-white rounded-xl mt-10">
       <div className="max-w-6xl mx-auto px-4">
@@ -42,6 +45,7 @@ const Features = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
+              onClick={() => navigate("/about")}
               tabIndex={0}
               onMouseEnter={() => setActiveIdx(idx)}
               onMouseLeave={() => setActiveIdx(null)}
@@ -112,7 +116,7 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
             type="text"
             placeholder={activeTab === "user" ? "John Doe" : "Admin Name"}
             required
-            className="w-full border border-green-200 rounded px-3 py-2"
+            className="text-black w-full border border-green-200 rounded px-3 py-2"
           />
         </div>
       )}
@@ -123,9 +127,9 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
         <input
           id="email"
           type="email"
-          placeholder={activeTab === "user" ? "you@example.com" : "admin@grocery.com"}
+          placeholder={activeTab === "user" ? "Enter Your Email" : "Enter Your Email"}
           required
-          className="w-full border border-green-200 rounded px-3 py-2"
+          className= " text-black w-full border border-green-200 rounded px-3 py-2"
         />
       </div>
       <div className="space-y-2">
@@ -133,11 +137,12 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
           Password
         </label>
         <input
+      
           id="password"
           type="password"
-          placeholder="••••••••"
+          placeholder="Enter Your Password"
           required
-          className="w-full border border-green-200 rounded px-3 py-2"
+          className=" text-black w-full border border-green-200 rounded px-3 py-2"
         />
       </div>
       {isSignUp && (
@@ -148,9 +153,9 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
           <input
             id="confirm-password"
             type="password"
-            placeholder="••••••••"
+            placeholder="Confirm Password"
             required
-            className="w-full border border-green-200 rounded px-3 py-2"
+            className="text-black w-full border border-green-200 rounded px-3 py-2"
           />
         </div>
       )}
@@ -208,7 +213,7 @@ const Auth = () => {
                   🌱 Fresh Groceries at Your Doorstep
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-green-700">
                 Your Daily
                 <span className="block text-green-700">Grocery Partner</span>
               </h1>

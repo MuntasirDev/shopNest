@@ -14,7 +14,7 @@ const Error = () => {
       <ShoppingCart className="w-24 h-24 text-green-600 mb-6 animate-bounce" />
       {/* Heading */}
       <h1 className="text-5xl font-extrabold text-green-800 mb-3 drop-shadow-lg">
-        Uh-oh! Aisle Not Found
+        Sorry! Page Not Found
       </h1>
       <p className="text-lg text-green-700 mb-6 max-w-lg mx-auto">
         Oops! The page you’re looking for isn’t stocked or freshly picked.<br />
