@@ -14,6 +14,8 @@ const About = () => {
             className="w-full h-full object-cover opacity-20"
           />
         </div>
+
+        
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-green-900 drop-shadow">
             About <span className="text-green-700">ShopNest</span>
