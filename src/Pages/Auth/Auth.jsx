@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { User, ShieldCheck, Truck, Leaf, Shield, Clock } from "lucide-react";
 import heroGrocery from "../../assets/hero-grocery.jpg"; // Adjust path if needed
 import { useNavigate } from "react-router";
+import FeaturedProducts from "../FeaturedProducts"; // Ensure correct import path
 
-
-// Features data
+// Features data (omitted for brevity)
 const features = [
   {
     icon: Truck,
@@ -28,7 +28,7 @@ const features = [
   },
 ];
 
-// Features Section
+// Features Section (omitted for brevity)
 const Features = () => {
   const [activeIdx, setActiveIdx] = useState(null);
   const navigate = useNavigate();
@@ -36,9 +36,12 @@ const Features = () => {
     <section className="py-16 bg-white rounded-xl mt-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-green-700 mb-4">Why Choose ShopNest?</h2>
+          <h2 className="text-4xl font-bold text-green-700 mb-4">
+            Why Choose ShopNest?
+          </h2>
           <p className="text-green-800 max-w-3xl mx-auto text-lg">
-            Experience the best online grocery shopping with our premium features
+            Experience the best online grocery shopping with our premium
+            features
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -52,13 +55,19 @@ const Features = () => {
               onFocus={() => setActiveIdx(idx)}
               onBlur={() => setActiveIdx(null)}
               className={`bg-white border border-green-800 rounded-xl p-8 text-center cursor-pointer
-                          transform transition duration-300 ease-in-out
-                          ${activeIdx === idx ? "shadow-xl scale-105" : "shadow-none scale-100"}`}
+							transform transition duration-300 ease-in-out
+							${
+                activeIdx === idx
+                  ? "shadow-xl scale-105"
+                  : "shadow-none scale-100"
+              }`}
             >
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-6 mx-auto">
                 <feature.icon className="h-10 w-10 text-green-700" />
               </div>
-              <h3 className="font-semibold text-green-800 mb-3 text-2xl">{feature.title}</h3>
+              <h3 className="font-semibold text-green-800 mb-3 text-2xl">
+                {feature.title}
+              </h3>
               <p className="text-base text-green-700">{feature.description}</p>
             </div>
           ))}
@@ -68,7 +77,7 @@ const Features = () => {
   );
 };
 
-// Auth Form
+// Auth Form (omitted for brevity)
 const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
   <div className="w-full max-w-md mx-auto bg-white border border-green-300 rounded-xl shadow-xl p-8 bg-opacity-90 backdrop-blur-sm">
     <div className="mb-6 text-center">
@@ -114,7 +123,9 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
           <input
             id="name"
             type="text"
-            placeholder={activeTab === "user" ? "John Doe" : "Admin Name"}
+            placeholder={
+              activeTab === "user" ? "Enter your Name" : "Enter Your Name"
+            }
             required
             className="text-black w-full border border-green-200 rounded px-3 py-2"
           />
@@ -127,9 +138,11 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
         <input
           id="email"
           type="email"
-          placeholder={activeTab === "user" ? "Enter Your Email" : "Enter Your Email"}
+          placeholder={
+            activeTab === "user" ? "Enter Your Email" : "Enter Your Email"
+          }
           required
-          className= " text-black w-full border border-green-200 rounded px-3 py-2"
+          className=" text-black w-full border border-green-200 rounded px-3 py-2"
         />
       </div>
       <div className="space-y-2">
@@ -137,7 +150,6 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
           Password
         </label>
         <input
-      
           id="password"
           type="password"
           placeholder="Enter Your Password"
@@ -147,7 +159,10 @@ const AuthForm = ({ activeTab, isSignUp, setActiveTab, setIsSignUp }) => (
       </div>
       {isSignUp && (
         <div className="space-y-2">
-          <label className="text-green-700 font-medium" htmlFor="confirm-password">
+          <label
+            className="text-green-700 font-medium"
+            htmlFor="confirm-password"
+          >
             Confirm Password
           </label>
           <input
@@ -191,22 +206,37 @@ const Auth = () => {
   const [activeTab, setActiveTab] = useState("user");
   const [isSignUp, setIsSignUp] = useState(false);
 
+  // Function to scroll to the login form
+  const scrollToLoginForm = () => {
+    // 1. Set the state to "Sign In" (isSignUp: false)
+    setIsSignUp(false);
+    
+    // 2. Wait for the state update and then scroll to the form element.
+    // We can use a reference or simply scroll to the top of the container that holds AuthForm.
+    // For simplicity, let's just scroll to the top of the Hero Section where the form is located.
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-100"
           style={{
             backgroundImage: `url(${heroGrocery})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 z-0 bg-linear-to-b from-white/60 to-white" />
+        {/* Adjusted: Ensure the gradient layer doesn't fully cover the image but provides contrast */}
+        <div className="absolute inset-0 z-0 bg-green-50/70" /> 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Left hero content */}
+            {/* Left hero content (omitted for brevity) */}
             <div className="text-center lg:text-left space-y-6">
               <div className="inline-block mb-2">
                 <span className="px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium shadow">
@@ -218,7 +248,8 @@ const Auth = () => {
                 <span className="block text-green-700">Grocery Partner</span>
               </h1>
               <p className="text-lg text-gray-700 max-w-lg mx-auto lg:mx-0">
-                Shop from thousands of fresh products and get them delivered to your home in minutes. Quality guaranteed, always.
+                Shop from thousands of fresh products and get them delivered to
+                your home in minutes. Quality guaranteed, always.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
                 <div className="text-center">
@@ -235,6 +266,7 @@ const Auth = () => {
                 </div>
               </div>
             </div>
+
             {/* Right hero - Auth form */}
             <div className="flex justify-center lg:justify-end">
               <AuthForm
@@ -247,9 +279,19 @@ const Auth = () => {
           </div>
         </div>
       </section>
+      <div className="mt-20">
+        {/* *** IMPORTANT CHANGE HERE ***
+          Passing the handler function to the child component
+        */}
+        <FeaturedProducts 
+          onCategoryClick={scrollToLoginForm} 
+          // You might also need to pass the setters if you want to target a specific tab/state
+          setIsSignUp={setIsSignUp}
+          setActiveTab={setActiveTab}
+        />
+      </div>
       {/* Features Section */}
       <Features />
-
     </div>
   );
 };
